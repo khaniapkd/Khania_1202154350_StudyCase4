@@ -30,12 +30,12 @@ public class ListMahasiswa extends AppCompatActivity {
 
         listNama.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
                 new ArrayList<String>()));
-        btnMulai.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new mulaiAsynctask().execute();
-            }
-        });
+
+    }
+
+    public void mulai(View view) {
+        mulaiAsynctask mulai = new mulaiAsynctask();
+        mulai.execute();
     }
 
     class mulaiAsynctask extends AsyncTask<Void, String, String> {
@@ -57,7 +57,7 @@ public class ListMahasiswa extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String s) {
-            Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
+            Toast.makeText(ListMahasiswa.this,s,Toast.LENGTH_LONG).show();
             pDialog.hide();
         }
 

@@ -40,6 +40,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="22dp"
                 android:layout_marginLeft="22dp"
+                android:onClick="cari"
                 android:text="@string/klik_untuk_mencari_gambar" />
 
             <ImageView

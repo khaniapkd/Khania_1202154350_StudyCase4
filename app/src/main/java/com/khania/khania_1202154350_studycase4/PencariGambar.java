@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
+
 import java.io.InputStream;
 import java.net.URL;
 
@@ -27,13 +29,11 @@ public class PencariGambar extends AppCompatActivity {
         linkURL = findViewById(R.id.url_gambar);
         btnCari = findViewById(R.id.cari_gambar);
         gambar = findViewById(R.id.gambar);
+    }
 
-        btnCari.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new cariGambar().execute();
-            }
-        });
+    public void cari(View view) {
+        cariGambar cGambar = new cariGambar();
+        cGambar.execute();
     }
 
     class cariGambar extends AsyncTask<Void, Void, Bitmap>{
@@ -56,7 +56,12 @@ public class PencariGambar extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Bitmap bitmap) {
-            gambar.setImageBitmap(bitmap);
+            //mengecek url tidak kosong kalau tidak maka akan dicari kemudian image bakalan diset ke imageview
+            if (bitmap != null){
+                gambar.setImageBitmap(bitmap);
+            }else {
+                Toast.makeText(PencariGambar.this, "Link Salah", Toast.LENGTH_LONG).show();
+            }
         }
     }
 }

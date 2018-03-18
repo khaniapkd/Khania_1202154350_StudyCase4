@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">KHANIA_1202154350_STUDYCASE4</string>
+    <string name="list_mahasiswa">List Nama Mahasiswa</string>
+    <string name="mulai_asynctask">Mulai AsyncTask</string>
+    <string name="masukkan_url_gambar">Masukkan URL gambar</string>
+    <string name="klik_untuk_mencari_gambar">Klik untuk mencari gambar</string>
+    <string-array name="list_nama">
+        <item>Khania</item>
+        <item>Dwima</item>
+        <item>Fikri</item>
+        <item>Editha</item>
+        <item>Amri</item>
+        <item>Taufan</item>
+        <item>Aulia</item>
+    </string-array>
+</resources>
